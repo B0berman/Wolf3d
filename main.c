@@ -8,7 +8,7 @@
 ** Last update Mon Feb  2 13:50:38 2015 hugo walbecq
 */
 
-#include	</usr/include/X11/X.h>
+#include	</opt/X11/include/X11/X.h>
 #include	<stdlib.h>
 #include	"minilibx/mlx.h"
 #include	"include/my.h"
@@ -68,8 +68,10 @@ int		main()
   t_tex		tex;
   t_sky		sky;
 
-  if ((my_init(&wolf)) == 1)
-    return (0);
+  if ((my_init(&wolf)) == 1) {
+      my_putstr("failed\n");
+      return (0);
+  }
   tex.img_ptr =  mlx_xpm_file_to_image(wolf.mlx_ptr,
 				       "img/murr.xpm", &img_x, &img_y);
   tex.data = mlx_get_data_addr(tex.img_ptr,
@@ -84,5 +86,6 @@ int		main()
   mlx_loop_hook(wolf.mlx_ptr, my_move, &wolf);
   mlx_expose_hook(wolf.win_ptr, gere_expose, &wolf);
   mlx_loop(wolf.mlx_ptr);
+  my_putstr("Hello");
   return (0);
 }

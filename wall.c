@@ -8,11 +8,11 @@
 ** Last update Thu Dec 18 16:55:40 2014 hugo walbecq
 */
 
-#include	<mlx.h>
 #include	<math.h>
 #include	<unistd.h>
 #include	<stdlib.h>
 #include	<stdio.h>
+#include	"minilibx/mlx.h"
 #include	"include/wolf3d.h"
 #include	"include/my.h"
 
@@ -109,6 +109,7 @@ void		next_place(t_wolf *wolf, float x, float y)
   y2 = wolf->y;
   len = my_strlen(wolf->lab[0]);
   b = y;
+  // move if doesn't go out or into a wall
   if (x >= 0 && x <= len && y >= 0 &&
       y <= len && wolf->lab[a][b] == '0')
     {
@@ -118,8 +119,10 @@ void		next_place(t_wolf *wolf, float x, float y)
   else if (x >= 0 && x <= len && y >= 0 && y <= len &&
 	   wolf->lab[a][b] == '2')
     next_lvl(wolf);
+  // slide on x
   else if (x >= 0 && x <= len && wolf->lab[a][y2] == '0')
     wolf->x = x;
+  // slide on y
   else if (x >= 0 && x <= len && wolf->lab[x2][b] == '0')
     wolf->y = y;
   play_wolf(wolf);

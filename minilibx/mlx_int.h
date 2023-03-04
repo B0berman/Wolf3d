@@ -112,7 +112,12 @@ typedef struct	s_xvar
 
 int	mlx_int_do_nothing();
 int	mlx_int_get_good_color();
+int mlx_int_get_visual(t_xvar*);
+int mlx_int_set_win_event_mask(t_xvar*);
 int	mlx_int_find_in_pcm();
+int mlx_int_str_str(char *,char *,int);
+int mlx_int_str_str_cote(char *,char *,int);
+unsigned int	mlx_get_color_value(void *mlx_ptr, int color);
 int	mlx_int_anti_resize_win();
 int	mlx_int_wait_first_expose();
 int	mlx_int_rgb_conversion();

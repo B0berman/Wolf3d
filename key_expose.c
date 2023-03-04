@@ -8,7 +8,7 @@
 ** Last update Tue Feb  3 10:55:20 2015 hugo walbecq
 */
 
-#include        <mlx.h>
+#include        "minilibx/mlx.h"
 #include	<math.h>
 #include	<stdlib.h>
 #include        "include/wolf3d.h"
@@ -66,13 +66,13 @@ int		my_move(t_wolf *wolf)
   y = -1;
   if (wolf->up == '1')
     {
-      x = wolf->x + 0.08 * cos(RAD(wolf->a));
-      y = wolf->y + 0.08 * sin(RAD(wolf->a));
+      x = wolf->x + 0.04 * cos(RAD(wolf->a));
+      y = wolf->y + 0.04 * sin(RAD(wolf->a));
     }
   if (wolf->down == '1')
     {
-      x = wolf->x - 0.08 * cos(RAD(wolf->a));
-      y = wolf->y - 0.08 * sin(RAD(wolf->a));
+      x = wolf->x - 0.04 * cos(RAD(wolf->a));
+      y = wolf->y - 0.04 * sin(RAD(wolf->a));
     }
   if (wolf->left == '1')
     wolf->a = wolf->a - 3;

@@ -13,7 +13,6 @@
 
 # define        ABS(Value)	((Value) < 0 ? - (Value) : (Value))
 # define	RAD(a)		(a * M_PI / 180)
-# define	M_PI		(3.1415926535)
 # define	WIN_X		(1200)
 # define	WIN_Y		(900)
 # define	D		(0.5)

@@ -8,6 +8,8 @@
 ** Last update Fri Dec 19 09:55:31 2014 hugo walbecq
 */
 
+#include <unistd.h>
+
 void	my_putchar(char c)
 {
   write(1, &c, 1);

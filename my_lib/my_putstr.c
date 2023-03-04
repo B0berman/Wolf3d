@@ -8,7 +8,9 @@
 ** Last update Fri Dec 19 09:56:05 2014 hugo walbecq
 */
 
-int	my_putstr(char *str)
+#include "my.h"
+
+void	my_putstr(char *str)
 {
   int	y;
 

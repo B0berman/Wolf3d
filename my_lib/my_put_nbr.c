@@ -8,7 +8,9 @@
 ** Last update Fri Dec 19 09:55:47 2014 hugo walbecq
 */
 
-int	my_put_nbr(int nb)
+#include "my.h"
+
+void	my_put_nbr(int nb)
 {
   if ((nb < 10 && nb > 0) ||
       (nb > -10 && nb < 0) || nb == 0)

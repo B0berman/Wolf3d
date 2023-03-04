@@ -22,7 +22,8 @@ SRC             =       main.c\
 OBJ             =       $(SRC:.c=.o)
 
 LIBFLAGS	=	-L my_lib/ \
-			-lmy
+			-lmy \
+			-L/usr/X11R6/lib
 
 CFLAGS          +=      -Wall\
                         -Wextra\
@@ -32,7 +33,7 @@ CFLAGS          +=      -Wall\
 all             :       $(NAME)
 
 $(NAME)         :       $(OBJ)
-			cc -o $(NAME) $(OBJ) $(CFLAGS) $(LIBFLAGS) -L./minilibx/ -lmlx_x86_64 -L/usr/lib64/X11 -lXext -lX11 -lm -L. my_lib/libmy.a 
+			cc -o $(NAME) $(OBJ) $(CFLAGS) $(LIBFLAGS) -L./minilibx/ -lmlx_ -L/opt/X11 -lXext -lX11 -lm -L. my_lib/libmy.a
 
 lib		:	
 			make re -C my_lib/
